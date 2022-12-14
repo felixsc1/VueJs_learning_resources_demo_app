@@ -2,7 +2,7 @@
 
 Based on udemy course ["Vue - The Complete Guide"](https://www.udemy.com/course/vuejs-2-the-complete-guide) section 10.
 
-![screenshot](./ui_screenshot.png)
+![screenshot](ui_screenshot.PNG)
 
 ## vue concepts applied:
 
