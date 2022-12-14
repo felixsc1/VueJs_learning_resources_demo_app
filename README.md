@@ -7,4 +7,4 @@ Based on udemy course ["Vue - The Complete Guide"](https://www.udemy.com/course/
 - **Slots**: In BaseCard.vue
 - **Dynamic styling**: In BaseButton.vue. Shows how to have one global component for all buttons that can then be used in different variations.
 - **Dynamic Components**: In TheResources.vue. Shows how to switch between different components using the component tag and buttons.
-- **Inject/Provide Feature**: Shown in TheResources.vue
+- **Inject/Provide Feature**: Shown in TheResources.vue -**Input Forms**: In AddResource.vue. Using refs to create a data object and uses inject/provide to submit the new data to the parent component.

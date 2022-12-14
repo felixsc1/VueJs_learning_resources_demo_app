@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    // adding type prop is not actually necessary, fallthrough feature would still allow passing type=submit etc.
     props: ['type', 'mode']
 }
 </script>
