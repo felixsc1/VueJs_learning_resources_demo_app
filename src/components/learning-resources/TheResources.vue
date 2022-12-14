@@ -46,7 +46,8 @@ export default {
     provide() {
         return {
             resources: this.storedResources,
-            addResource: this.addResource
+            addResource: this.addResource,
+            deleteResource: this.removeResource,
         }
     },
     computed: {
@@ -71,6 +72,13 @@ export default {
             // unshift is like push, but adds it to beginning of the array
             this.storedResources.unshift(newResource)
             this.selectedTab = 'stored-resources'
+        },
+        removeResource(id) {
+            // we have to do it like this, since using .filter() would not manipulate and original array (it would create a new one),
+            // provide points to an array and doesn't re-inject the new one (see lesson 137)
+            // only push/unshift/slice work.
+            const resourceIndex = this.storedResources.findIndex(res => res.id === id)
+            this.storedResources.splice(resourceIndex, 1)
         }
     }
 }
