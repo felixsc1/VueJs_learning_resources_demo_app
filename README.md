@@ -2,6 +2,8 @@
 
 Based on udemy course ["Vue - The Complete Guide"](https://www.udemy.com/course/vuejs-2-the-complete-guide) section 10.
 
+![screenshot](ui_screenshot.png)
+
 ## vue concepts applied:
 
 - **Slots**: In BaseCard.vue
