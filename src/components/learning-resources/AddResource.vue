@@ -1,4 +1,14 @@
 <template>
+    <!-- provide a template tag for each slot, for header slot we use default title variable -->
+    <base-dialog v-if="inputIsInvalid" title="Invalid Input" @close="confirmError">
+        <template #default>
+            <p>At least one input value is invalid</p>
+            <p>Please check all inputs and make sure you entered something.</p>
+        </template>
+        <template #actions>
+            <base-button @click="confirmError">OK</base-button>
+        </template>
+    </base-dialog>
     <base-card>
         <form @submit.prevent="submitData">
             <div class="form-control">
@@ -23,13 +33,27 @@
 <script>
 export default {
     inject: ['addResource'],
+    data() {
+        return {
+            inputIsInvalid: false,
+        }
+    },
     methods: {
         submitData() {
             const enteredTitle = this.$refs.titleInput.value
             const enteredDescription = this.$refs.descriptionInput.value
             const enteredLink = this.$refs.linkInput.value
 
+            // trim removes trailing white spaces, in case user enters only spaces
+            if (enteredTitle.trim() === '' || enteredDescription.trim() === '' || enteredLink.trim() === '') {
+                this.inputIsInvalid = true
+                return
+            }
+
             this.addResource(enteredTitle, enteredDescription, enteredLink)
+        },
+        confirmError() {
+            this.inputIsInvalid = false
         }
     }
 }

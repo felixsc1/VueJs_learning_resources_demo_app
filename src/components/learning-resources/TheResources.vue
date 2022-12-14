@@ -8,8 +8,8 @@
             Resources</base-button>
         <base-button @click="setSelectedTab('add-resource')" :mode="addResButtonMode">Add Resource</base-button>
     </base-card>
+    <!-- keep alive caches the data, so that inputs don't get lost when switching tabs -->
     <keep-alive>
-        <!-- keep alive caches the data, so that inputs dont get lost when switching tabs -->
         <component :is="selectedTab"></component>
     </keep-alive>
 </template>
